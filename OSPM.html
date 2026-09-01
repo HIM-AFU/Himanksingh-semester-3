@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Details</title>
+</head>
+<body>
+
+<h2>Product Details</h2>
+
+<script>
+let product = {
+    productId: 101,
+    productName: "Laptop",
+    price: 50000,
+    quantity: 2,
+
+    totalPrice: function() {
+        return this.price * this.quantity;
+    },
+
+    updateQuantity: function(qty) {
+        this.quantity = qty;
+    },
+
+    displayDetails: function() {
+        document.write("Product ID: " + this.productId + "<br>");
+        document.write("Product Name: " + this.productName + "<br>");
+        document.write("Price: " + this.price + "<br>");
+        document.write("Quantity: " + this.quantity + "<br>");
+        document.write("Total Price: " + this.totalPrice() + "<br><br>");
+    }
+};
+
+product.displayDetails();
+
+product.updateQuantity(5);
+
+product.displayDetails();
+</script>
+
+</body>
+</html>
