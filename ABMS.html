@@ -1,0 +1,51 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Account</title>
+</head>
+<body>
+
+<h2>Bank Account Details</h2>
+
+<script>
+let bankAccount = {
+    accountHolderName: "Himank Singh",
+    accountNumber: "123456789",
+    accountBalance: 5000,
+
+    deposit: function(amount) {
+        this.accountBalance += amount;
+    },
+
+    withdraw: function(amount) {
+        if (amount > this.accountBalance) {
+            document.write("Insufficient Balance<br>");
+        } else {
+            this.accountBalance -= amount;
+        }
+    },
+
+    displayBalance: function() {
+        document.write("Current Balance: " + this.accountBalance);
+    }
+};
+
+document.write("Account Holder Name: " + bankAccount.accountHolderName + "<br>");
+document.write("Account Number: " + bankAccount.accountNumber + "<br>");
+document.write("Initial Balance: " + bankAccount.accountBalance + "<br><br>");
+
+bankAccount.deposit(2000);
+document.write("After Deposit: " + bankAccount.accountBalance + "<br>");
+
+bankAccount.withdraw(1000);
+document.write("After Withdrawal: " + bankAccount.accountBalance + "<br>");
+
+bankAccount.withdraw(10000);
+
+bankAccount.displayBalance();
+</script>
+
+</body>
+</html>
+```
